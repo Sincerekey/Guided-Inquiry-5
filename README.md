@@ -11,4 +11,6 @@ Includes all Basic Calculator Function
 >
 >Division
 >
->Percentages 
+>Percentages
+>
+>Memory available in the console 
