@@ -1,0 +1,84 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+}
+html{
+    height: 90%;
+    padding-top: 20%;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    width: 70%;
+    background: linear-gradient(to left, rgb(172, 120, 22), rgb(67, 63, 63));
+
+}
+
+#calcGrid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 75%;
+    grid-template-columns: repeat(4, 16%);
+    grid-template-rows: minmax(auto, auto) repeat(5, 20%);
+}
+
+#error{
+    grid-column: 1/1;
+    grid-row: 1/1;
+    text-align: left;
+}
+
+#calcGrid button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+#calcGrid button:hover{
+    background-color: rgba(255, 255, 255, .9);;
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.span-four{
+    grid-column: span 4;
+}
+section{
+    min-block-size: 15vh;
+}
+#output{
+    color: aliceblue;
+    grid-column: 1 / -1;
+    grid-row: 1 / 1;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 2%;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+}
+
+.previOperant{
+    font-size: 1.5rem;
+    grid-row: 1 / 1;
+}
+
+.currOperant{
+    color: peachpuff;
+    font-size: 2.5rem;
+    grid-row: 1 / 1;
+
+}
+
