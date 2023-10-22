@@ -17,7 +17,7 @@ class Calculator{
     appendNumber(number){
         if (number === '.' && this.currOperand.includes('.')){return}
         this.currOperand = this.currOperand.toString() + number.toString()
-        console.log('Append successful')
+        // console.log('Append successful')
     }
 
     chooseOperantion(operation){
@@ -99,6 +99,7 @@ const calculator = new Calculator(previOperandTextElement, currOperandTextElemen
 numberButtons.forEach(button => {
     button.addEventListener('click', () =>{
     calculator.appendNumber(button.innerText)
+    // console.log(calculator);
     calculator.updateDisplay()
 })
 })
@@ -110,9 +111,15 @@ operantionButtons.forEach(button => {
 })
 })
 
+let i = 1
 equalsButton.addEventListener( 'click', ()=>{
+    let currentEquation = calculator.previOperand + " " + calculator.operation +" "+ calculator.currOperand;
+    console.log("•" +' ' +i+' '+'•'+ '  Calculator Equation: ' + currentEquation);
     calculator.compute()
+    let result = calculator.currOperand;
+    console.log('Result: ' + result);
     calculator.updateDisplay()
+    i++
 })
 
 allClearButton.addEventListener('click', () =>{
@@ -125,9 +132,9 @@ deleteButton.addEventListener('click', () =>{
     calculator.updateDisplay()
 })
 
-parentheses.addEventListener('click', () => {
-    calculator.addParentheses();
-    calculator.updateDisplay();
-});
+// parentheses.addEventListener('click', () => {
+//     calculator.addParentheses();
+//     calculator.updateDisplay();
+// });
 
 
